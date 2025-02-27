@@ -50,20 +50,20 @@ const Hero = () => {
       
       <div className="relative z-10 text-center max-w-4xl px-4 animate-fade-in">
         <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
-          <span className="text-gradient">Creative</span> Portfolio
+          <span className="text-gradient">Thinula</span> Harischandra
         </h1>
         
         <p className="text-xl md:text-2xl text-foreground/70 mb-10 max-w-2xl mx-auto">
-          Photographer, Designer, and Digital Creator.
-          Capturing moments and designing experiences.
+          Computer Science Student, Data Enthusiast, and Developer.
+          Turning data into solutions and code into experiences.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
-            href="#photography"
+            href="#projects"
             className="button-primary"
           >
-            View Photography
+            View Projects
           </a>
           <a
             href="#contact"
@@ -75,7 +75,7 @@ const Hero = () => {
       </div>
       
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <a href="#photography" aria-label="Scroll down">
+        <a href="#about" aria-label="Scroll down">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M12 5v14M19 12l-7 7-7-7"/>
           </svg>

@@ -1,15 +1,15 @@
 
 import { useRef, useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
-import { Code, Database, Figma, Globe, Server, Terminal } from 'lucide-react';
+import { Code, Database, Globe, Server, Terminal, BarChart3, GitBranch, Languages } from 'lucide-react';
 
 const skills = [
-  { name: 'Programming', level: 90, icon: <Terminal className="w-4 h-4" /> },
-  { name: 'Web Development', level: 85, icon: <Globe className="w-4 h-4" /> },
-  { name: 'Backend', level: 80, icon: <Server className="w-4 h-4" /> },
-  { name: 'Database', level: 75, icon: <Database className="w-4 h-4" /> },
-  { name: 'UI/UX Design', level: 70, icon: <Figma className="w-4 h-4" /> },
-  { name: 'Algorithms', level: 85, icon: <Code className="w-4 h-4" /> },
+  { name: 'Programming (Python, Java, C#)', level: 90, icon: <Terminal className="w-4 h-4" /> },
+  { name: 'Web Development (React)', level: 85, icon: <Globe className="w-4 h-4" /> },
+  { name: 'Backend (Spring Boot)', level: 80, icon: <Server className="w-4 h-4" /> },
+  { name: 'Database (MySQL, PostgreSQL)', level: 85, icon: <Database className="w-4 h-4" /> },
+  { name: 'Data Visualization', level: 80, icon: <BarChart3 className="w-4 h-4" /> },
+  { name: 'Version Control (Git)', level: 75, icon: <GitBranch className="w-4 h-4" /> },
 ];
 
 const About = () => {
@@ -46,17 +46,52 @@ const About = () => {
         )}>
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gradient">About Me</h2>
           <p className="mb-4 text-foreground/80">
-            I'm a passionate Computer Science student with a strong foundation in software development
-            and algorithm design. I enjoy solving complex problems and creating efficient, elegant solutions.
+            I'm a passionate Computer Science student at Informatics Institute of Technology (IIT) with a concurrent
+            degree in Industrial Statistics and Mathematical Finance at the University of Colombo.
           </p>
           <p className="mb-6 text-foreground/80">
-            With a focus on both theory and practical applications, I've developed expertise in various
-            programming languages and frameworks. I'm particularly interested in web development, artificial
-            intelligence, and data structures & algorithms. I believe in clean code, continuous learning,
-            and pushing the boundaries of what's possible with technology.
+            I'm particularly interested in machine learning, data analysis, and software development, combining my
+            statistical knowledge with programming expertise. My dual education provides me with a unique perspective
+            on solving complex problems through both computational and mathematical approaches.
           </p>
           
-          <div className="flex gap-4 mb-8">
+          <div className="space-y-4 mb-6">
+            <h3 className="text-xl font-semibold">Languages</h3>
+            <div className="flex flex-wrap gap-3">
+              <div className="flex items-center gap-2 bg-secondary/50 px-3 py-1 rounded-full">
+                <Languages className="w-4 h-4" />
+                <span>English</span>
+              </div>
+              <div className="flex items-center gap-2 bg-secondary/50 px-3 py-1 rounded-full">
+                <Languages className="w-4 h-4" />
+                <span>Sinhala</span>
+              </div>
+            </div>
+          </div>
+          
+          <div className="space-y-4 mb-6">
+            <h3 className="text-xl font-semibold">Interests</h3>
+            <div className="flex flex-wrap gap-3">
+              {["Machine Learning", "Technology & Innovation", "Stats", "Maths"].map((interest) => (
+                <span key={interest} className="bg-secondary/50 px-3 py-1 rounded-full">
+                  {interest}
+                </span>
+              ))}
+            </div>
+          </div>
+          
+          <div className="space-y-4 mb-8">
+            <h3 className="text-xl font-semibold">Hobbies</h3>
+            <div className="flex flex-wrap gap-3">
+              {["Photography", "Table Tennis"].map((hobby) => (
+                <span key={hobby} className="bg-secondary/50 px-3 py-1 rounded-full">
+                  {hobby}
+                </span>
+              ))}
+            </div>
+          </div>
+          
+          <div className="flex gap-4">
             <a href="#contact" className="button-primary">
               Get in Touch
             </a>

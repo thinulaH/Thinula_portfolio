@@ -5,39 +5,39 @@ import { GraduationCap, BookOpen, Calendar, Award } from 'lucide-react';
 
 const educationItems = [
   {
-    degree: "Bachelor of Science in Computer Science",
-    institution: "University of Technology",
-    period: "2020 - 2024",
-    description: "Focusing on software development, algorithms, and data structures with a minor in artificial intelligence.",
-    achievements: ["Dean's List (2020-2023)", "Outstanding Student Award (2022)", "Academic Excellence Scholarship"]
+    degree: "BSc (Hons) Computer Science",
+    institution: "Informatics Institute of Technology (IIT)",
+    period: "2023 - Present",
+    description: "Currently pursuing a Computer Science degree with honors, maintaining an average of 79.15%.",
+    achievements: ["Coursework in algorithms, data structures, and software development", "Focus on web and application development", "Active participant in university tech projects"]
   },
   {
-    degree: "High School Diploma",
-    institution: "Science Academy",
-    period: "2016 - 2020",
-    description: "Advanced mathematics and computer science program with honors.",
-    achievements: ["Valedictorian", "National Computing Olympiad - Silver Medal", "Mathematics Club President"]
+    degree: "BSc Industrial Statistics and Mathematical Finance",
+    institution: "University of Colombo",
+    period: "2024 - Present",
+    description: "Concurrent degree focusing on statistical analysis and mathematical modeling with a GPA of 3.81.",
+    achievements: ["Statistical modeling and analysis", "Mathematical finance applications", "Data-driven decision making"]
   }
 ];
 
 const certifications = [
   {
-    name: "Full Stack Web Development",
-    issuer: "Coding Bootcamp",
-    date: "2022",
-    credential: "FSW-2022-1234"
+    name: "Web Development",
+    issuer: "Online Learning Platform",
+    date: "2023",
+    credential: "WD-2023-TH"
+  },
+  {
+    name: "Python for Data Science",
+    issuer: "DataTech Academy",
+    date: "2024",
+    credential: "PDS-2024-TH"
   },
   {
     name: "Machine Learning Fundamentals",
-    issuer: "DataTech Academy",
-    date: "2023",
-    credential: "ML-2023-5678"
-  },
-  {
-    name: "AWS Certified Developer",
-    issuer: "Amazon Web Services",
-    date: "2023",
-    credential: "AWS-DEV-9012"
+    issuer: "Kaggle",
+    date: "2024",
+    credential: "ML-2024-TH"
   }
 ];
 
@@ -112,7 +112,7 @@ const Education = () => {
                     <div className="space-y-1">
                       <h5 className="font-medium text-sm flex items-center gap-1">
                         <Award className="h-4 w-4" />
-                        Achievements
+                        Focus Areas
                       </h5>
                       <ul className="list-disc list-inside text-sm text-foreground/70">
                         {item.achievements.map((achievement, i) => (
@@ -167,8 +167,8 @@ const Education = () => {
               I'm constantly expanding my knowledge through online courses and self-study in:
             </p>
             <div className="grid grid-cols-2 gap-3">
-              {["Data Science", "Cloud Computing", "Mobile Development", "Cybersecurity", 
-                "Blockchain", "DevOps"].map((topic, i) => (
+              {["Data Science", "Machine Learning", "Web Development", "Statistical Analysis", 
+                "Financial Modeling", "Python Libraries"].map((topic, i) => (
                 <div key={i} className="flex items-center gap-2 text-sm">
                   <div className="w-2 h-2 rounded-full bg-primary"></div>
                   {topic}

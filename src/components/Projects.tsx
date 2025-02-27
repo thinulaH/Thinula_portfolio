@@ -1,63 +1,60 @@
 
 import { useRef, useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
-import { Github, ExternalLink, Code, Server, Database, Layers } from 'lucide-react';
+import { Github, ExternalLink, Code, Server, Database, Layers, BrainCircuit, Globe } from 'lucide-react';
 
 const projects = [
   {
-    title: "Smart Learning Platform",
-    description: "An AI-powered learning management system that personalizes content based on student performance and learning style.",
-    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3",
-    tags: ["React", "Node.js", "MongoDB", "Machine Learning"],
+    title: "Snicker-Snap - Educational Game",
+    description: "A university group project focused on creating an educational game to enhance learning experiences through interactive gameplay.",
+    image: "https://images.unsplash.com/photo-1553481187-be93c21490a9",
+    tags: ["Game Development", "Education", "Interactive Learning"],
     github: "#",
     demo: "#",
     category: "full-stack",
-    featured: true
+    featured: true,
+    timeline: "Oct 2024-Present"
   },
   {
-    title: "Data Visualization Dashboard",
-    description: "Interactive dashboard for visualizing complex datasets with customizable charts and filters.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
-    tags: ["D3.js", "Vue.js", "Firebase", "REST API"],
+    title: "Real-Time Ticket Management System",
+    description: "An individual project developing a system for efficiently managing and processing tickets in real-time environments.",
+    image: "https://images.unsplash.com/photo-1551434678-e076c223a692",
+    tags: ["Java", "Spring Boot", "Database", "Real-time Processing"],
+    github: "#",
+    demo: "#",
+    category: "backend",
+    featured: true,
+    timeline: "Sep 2024-Jan 2025"
+  },
+  {
+    title: "House Price Prediction",
+    description: "A machine learning regression project to predict house prices based on various features and historical data.",
+    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa",
+    tags: ["Machine Learning", "Python", "Regression", "Data Analysis"],
+    github: "#",
+    category: "data-science",
+    featured: true,
+    timeline: "Jan 2025"
+  },
+  {
+    title: "Career Ladders to Billionaire Status",
+    description: "A data exploration group project analyzing career paths and factors that lead to exceptional financial success.",
+    image: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e",
+    tags: ["Data Analysis", "Statistical Modeling", "Visualization"],
+    github: "#",
+    demo: "#",
+    category: "data-science",
+    timeline: "Oct 2024"
+  },
+  {
+    title: "Life-on-Land",
+    description: "A web development group project focused on environmental awareness and conservation of land ecosystems.",
+    image: "https://images.unsplash.com/photo-1586974710160-c9a5a42eecfe",
+    tags: ["Web Development", "React", "Environmental"],
     github: "#",
     demo: "#",
     category: "frontend",
-    featured: true
-  },
-  {
-    title: "Algorithmic Trading Bot",
-    description: "Automated trading system that analyzes market data and executes trades based on predefined strategies.",
-    image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3",
-    tags: ["Python", "TensorFlow", "Financial APIs", "Statistical Analysis"],
-    github: "#",
-    category: "backend",
-    featured: true
-  },
-  {
-    title: "IoT Home Automation",
-    description: "System connecting various smart home devices and providing a unified control interface.",
-    image: "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f",
-    tags: ["Raspberry Pi", "MQTT", "React Native", "Express.js"],
-    github: "#",
-    demo: "#",
-    category: "full-stack"
-  },
-  {
-    title: "Secure File Sharing Service",
-    description: "End-to-end encrypted file sharing platform with access controls and expiring links.",
-    image: "https://images.unsplash.com/photo-1563206767-5b18f218e8de",
-    tags: ["Cryptography", "Java", "Spring Boot", "AWS S3"],
-    github: "#",
-    category: "backend"
-  },
-  {
-    title: "Social Network Analysis Tool",
-    description: "Tool for analyzing and visualizing relationships and influence in social networks.",
-    image: "https://images.unsplash.com/photo-1522542550221-31fd19575a2d",
-    tags: ["Graph Algorithms", "Python", "NetworkX", "Flask"],
-    github: "#",
-    demo: "#",
-    category: "data-science"
+    timeline: "Feb 2024-Apr 2024"
   }
 ];
 
@@ -65,7 +62,8 @@ const techIcons = {
   "full-stack": <Layers className="h-5 w-5" />,
   "frontend": <Code className="h-5 w-5" />,
   "backend": <Server className="h-5 w-5" />,
-  "data-science": <Database className="h-5 w-5" />
+  "data-science": <BrainCircuit className="h-5 w-5" />,
+  "web": <Globe className="h-5 w-5" />
 };
 
 const Projects = () => {
@@ -111,7 +109,7 @@ const Projects = () => {
     <section id="projects" className="section-container" ref={sectionRef}>
       <h2 className="section-title text-center text-gradient">My Projects</h2>
       <p className="text-center text-foreground/70 max-w-3xl mx-auto mb-12">
-        A collection of my most significant works, showcasing my skills and problem-solving abilities.
+        A collection of my academic and personal projects highlighting my skills and interests.
       </p>
 
       <div className="flex justify-center mb-10">
@@ -128,7 +126,7 @@ const Projects = () => {
               )}
             >
               {category.id !== "all" && (
-                <span className="mr-1">{techIcons[category.id as keyof typeof techIcons]}</span>
+                <span className="inline-flex items-center mr-1">{techIcons[category.id as keyof typeof techIcons]}</span>
               )}
               {category.label}
             </button>
@@ -179,6 +177,12 @@ const Projects = () => {
                   </div>
                 )}
               </div>
+
+              {project.timeline && (
+                <div className="absolute bottom-4 right-4 bg-background/80 backdrop-blur-sm text-xs px-2 py-1 rounded-full">
+                  {project.timeline}
+                </div>
+              )}
             </div>
             
             <div className="p-6">

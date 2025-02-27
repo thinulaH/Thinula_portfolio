@@ -1,13 +1,15 @@
 
 import { useRef, useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
+import { Code, Database, Figma, Globe, Server, Terminal } from 'lucide-react';
 
 const skills = [
-  { name: 'Photography', level: 90 },
-  { name: 'Photo Editing', level: 85 },
-  { name: 'Composition', level: 80 },
-  { name: 'Lighting', level: 75 },
-  { name: 'Digital Design', level: 70 },
+  { name: 'Programming', level: 90, icon: <Terminal className="w-4 h-4" /> },
+  { name: 'Web Development', level: 85, icon: <Globe className="w-4 h-4" /> },
+  { name: 'Backend', level: 80, icon: <Server className="w-4 h-4" /> },
+  { name: 'Database', level: 75, icon: <Database className="w-4 h-4" /> },
+  { name: 'UI/UX Design', level: 70, icon: <Figma className="w-4 h-4" /> },
+  { name: 'Algorithms', level: 85, icon: <Code className="w-4 h-4" /> },
 ];
 
 const About = () => {
@@ -44,13 +46,14 @@ const About = () => {
         )}>
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gradient">About Me</h2>
           <p className="mb-4 text-foreground/80">
-            I'm a passionate photographer and digital creator with a keen eye for detail and composition. 
-            My work focuses on capturing the essence of subjects through a minimalist lens.
+            I'm a passionate Computer Science student with a strong foundation in software development
+            and algorithm design. I enjoy solving complex problems and creating efficient, elegant solutions.
           </p>
           <p className="mb-6 text-foreground/80">
-            With over 5 years of experience in the field, I've developed a unique style that 
-            combines technical precision with artistic expression. I believe in the power of 
-            simplicity and letting the subject speak for itself.
+            With a focus on both theory and practical applications, I've developed expertise in various
+            programming languages and frameworks. I'm particularly interested in web development, artificial
+            intelligence, and data structures & algorithms. I believe in clean code, continuous learning,
+            and pushing the boundaries of what's possible with technology.
           </p>
           
           <div className="flex gap-4 mb-8">
@@ -58,10 +61,10 @@ const About = () => {
               Get in Touch
             </a>
             <a 
-              href="#photography" 
+              href="#projects" 
               className="px-6 py-3 rounded-md border border-border bg-secondary/50 hover:bg-secondary transition-all"
             >
-              View Work
+              View Projects
             </a>
           </div>
         </div>
@@ -70,13 +73,16 @@ const About = () => {
           "transition-all duration-700 delay-300 transform",
           isVisible ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"
         )}>
-          <h3 className="text-2xl font-semibold mb-6">My Skills</h3>
+          <h3 className="text-2xl font-semibold mb-6">Technical Skills</h3>
           
           <div className="space-y-6">
             {skills.map((skill, index) => (
               <div key={skill.name} className="space-y-2">
-                <div className="flex justify-between">
-                  <span className="font-medium">{skill.name}</span>
+                <div className="flex justify-between items-center">
+                  <span className="font-medium flex items-center gap-2">
+                    {skill.icon}
+                    {skill.name}
+                  </span>
                   <span>{skill.level}%</span>
                 </div>
                 <div className="h-2 bg-secondary rounded-full overflow-hidden">

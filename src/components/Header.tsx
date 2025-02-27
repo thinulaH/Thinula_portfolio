@@ -6,12 +6,15 @@ import { cn } from '@/lib/utils';
 const Header = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const sections = [
     { id: 'home', label: 'Home' },
+    { id: 'about', label: 'About' },
+    { id: 'education', label: 'Education' },
+    { id: 'projects', label: 'Projects' },
     { id: 'photography', label: 'Photography' },
     { id: 'social', label: 'Social' },
-    { id: 'about', label: 'About' },
     { id: 'contact', label: 'Contact' },
   ];
 
@@ -39,15 +42,19 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [sections]);
 
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
+
   return (
     <header className={cn(
       "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
       scrolled ? "py-3 bg-background/80 backdrop-blur-lg shadow-sm" : "py-5"
     )}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
-        <a href="#home" className="text-xl font-bold text-gradient">PORTFOLIO</a>
+        <a href="#home" className="text-xl font-bold text-gradient">CS PORTFOLIO</a>
         
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-6">
           {sections.map((section) => (
             <a
               key={section.id}
@@ -65,7 +72,11 @@ const Header = () => {
         <div className="flex items-center gap-4">
           <ThemeToggle />
           
-          <button className="md:hidden" aria-label="Toggle menu">
+          <button 
+            className="md:hidden" 
+            aria-label="Toggle menu"
+            onClick={toggleMobileMenu}
+          >
             <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
               <line x1="3" y1="12" x2="21" y2="12"></line>
               <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -73,6 +84,39 @@ const Header = () => {
             </svg>
           </button>
         </div>
+      </div>
+
+      {/* Mobile menu */}
+      <div className={cn(
+        "fixed inset-0 bg-background/95 backdrop-blur-md flex flex-col items-center justify-center z-50 transition-all duration-300 md:hidden",
+        mobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+      )}>
+        <button 
+          className="absolute top-5 right-5" 
+          onClick={toggleMobileMenu}
+          aria-label="Close menu"
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+
+        <nav className="flex flex-col items-center gap-6">
+          {sections.map((section) => (
+            <a
+              key={section.id}
+              href={`#${section.id}`}
+              className={cn(
+                "text-xl font-medium",
+                activeSection === section.id ? "text-primary" : "text-foreground/70"
+              )}
+              onClick={toggleMobileMenu}
+            >
+              {section.label}
+            </a>
+          ))}
+        </nav>
       </div>
     </header>
   );

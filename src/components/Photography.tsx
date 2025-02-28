@@ -1,51 +1,67 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { cn } from '@/lib/utils';
+import { Camera, ImagePlus, ExternalLink } from 'lucide-react';
 
 const photos = [
   {
     id: 1,
-    src: "https://images.unsplash.com/photo-1518770660439-4636190af475",
-    alt: "Macro shot of circuit board",
-    description: "Technology Patterns"
+    src: "https://images.unsplash.com/photo-1472396961693-142e6e269027",
+    alt: "Two brown deer beside trees and a mountain",
+    description: "Wildlife in Natural Habitat"
   },
   {
     id: 2,
-    src: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e",
-    alt: "Minimalist robot design",
-    description: "Robotic Simplicity"
+    src: "https://images.unsplash.com/photo-1466721591366-2d5fba72006d",
+    alt: "Brown antelope and zebra on a field during daytime",
+    description: "Savanna Wildlife"
   },
   {
     id: 3,
-    src: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5",
-    alt: "Code pattern display",
-    description: "Digital Matrix"
+    src: "https://images.unsplash.com/photo-1535268647677-300dbf3d78d1",
+    alt: "Grey tabby kitten",
+    description: "Pet Portrait"
   },
   {
     id: 4,
-    src: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
-    alt: "Colorful code on screen",
-    description: "Creative Coding"
+    src: "https://images.unsplash.com/photo-1498936178812-4b2e558d2937",
+    alt: "Shallow focus photography of bees in mid-air",
+    description: "Macro Insect Photography"
   },
   {
     id: 5,
-    src: "https://images.unsplash.com/photo-1483058712412-4245e9b90334",
-    alt: "Modern workspace with iMac",
-    description: "Minimal Workspace"
+    src: "https://images.unsplash.com/photo-1721322800607-8c38375eef04",
+    alt: "A living room with a couch and a table",
+    description: "Interior Design"
   },
   {
     id: 6,
-    src: "https://images.unsplash.com/photo-1451187580459-43490279c0fa",
-    alt: "Space imagery with stars",
-    description: "Cosmic Wonder"
+    src: "https://images.unsplash.com/photo-1538991383142-36c4edeaffde",
+    alt: "Landscape view of mountains and water",
+    description: "Scenic Landscape"
   }
 ];
 
-const Photography = () => {
+export const Photography = () => {
   const [activePhoto, setActivePhoto] = useState<number | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [visibleItems, setVisibleItems] = useState<boolean[]>(Array(photos.length).fill(false));
+  const [categories, setCategories] = useState<string[]>([]);
+  const [activeCategory, setActiveCategory] = useState<string>("all");
 
+  // Extract categories from photos for filtering
+  useEffect(() => {
+    const allCategories = new Set<string>();
+    photos.forEach(photo => {
+      if (photo.description) {
+        const category = photo.description.split(' ')[0];
+        allCategories.add(category);
+      }
+    });
+    setCategories(Array.from(allCategories));
+  }, []);
+
+  // Handle intersection observer for animations
   useEffect(() => {
     if (!containerRef.current) return;
 
@@ -71,15 +87,45 @@ const Photography = () => {
     };
   }, []);
 
+  const filteredPhotos = activeCategory === "all" 
+    ? photos 
+    : photos.filter(photo => photo.description.startsWith(activeCategory));
+
   return (
-    <section id="photography" className="section-container">
-      <h2 className="section-title text-center text-gradient">Photography</h2>
-      <p className="text-center text-foreground/70 max-w-3xl mx-auto mb-12">
-        A collection of my best captures, showcasing unique perspectives and visual stories.
-      </p>
+    <div className="section-container">
+      <div className="mb-12">
+        <div className="flex items-center justify-center gap-3 mb-10">
+          <button
+            onClick={() => setActiveCategory("all")}
+            className={cn(
+              "px-4 py-2 rounded-full transition-all text-sm font-medium",
+              activeCategory === "all" 
+                ? "bg-primary text-primary-foreground" 
+                : "bg-secondary hover:bg-secondary/80"
+            )}
+          >
+            All Photos
+          </button>
+          
+          {categories.map(category => (
+            <button
+              key={category}
+              onClick={() => setActiveCategory(category)}
+              className={cn(
+                "px-4 py-2 rounded-full transition-all text-sm font-medium",
+                activeCategory === category 
+                  ? "bg-primary text-primary-foreground" 
+                  : "bg-secondary hover:bg-secondary/80"
+              )}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
+      </div>
 
       <div ref={containerRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {photos.map((photo, index) => (
+        {filteredPhotos.map((photo, index) => (
           <div 
             key={photo.id}
             data-index={index}
@@ -98,7 +144,13 @@ const Photography = () => {
               />
             </div>
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-              <h3 className="text-white font-medium text-lg">{photo.description}</h3>
+              <div className="w-full">
+                <h3 className="text-white font-medium text-lg">{photo.description}</h3>
+                <div className="flex items-center gap-2 mt-2">
+                  <Camera className="w-4 h-4 text-white/70" />
+                  <span className="text-white/70 text-sm">Click to view</span>
+                </div>
+              </div>
             </div>
           </div>
         ))}
@@ -131,11 +183,49 @@ const Photography = () => {
               <h3 className="text-xl font-medium">
                 {photos.find(p => p.id === activePhoto)?.description}
               </h3>
+              <p className="text-white/70 mt-2">
+                {photos.find(p => p.id === activePhoto)?.alt}
+              </p>
             </div>
           </div>
         </div>
       )}
-    </section>
+      
+      <div className="mt-16 text-center">
+        <h2 className="text-2xl font-bold mb-6">About My Photography</h2>
+        <p className="max-w-3xl mx-auto text-foreground/70 mb-8">
+          Photography is one of my creative outlets where I explore the world through my lens. 
+          I enjoy capturing wildlife, landscapes, and unique moments that tell a story.
+          My approach focuses on finding beauty in both grand scenes and subtle details.
+        </p>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          <div className="glass-card p-6 rounded-xl">
+            <ImagePlus className="w-8 h-8 mx-auto mb-4 text-primary" />
+            <h3 className="text-lg font-medium mb-2">Equipment</h3>
+            <p className="text-foreground/70 text-sm">
+              I shoot with a DSLR and occasionally my smartphone for spontaneous captures. Quality lenses help me achieve the look I want.
+            </p>
+          </div>
+          
+          <div className="glass-card p-6 rounded-xl">
+            <Camera className="w-8 h-8 mx-auto mb-4 text-primary" />
+            <h3 className="text-lg font-medium mb-2">Style</h3>
+            <p className="text-foreground/70 text-sm">
+              My photography style blends natural lighting with thoughtful composition to create images that evoke emotion and tell stories.
+            </p>
+          </div>
+          
+          <div className="glass-card p-6 rounded-xl">
+            <ExternalLink className="w-8 h-8 mx-auto mb-4 text-primary" />
+            <h3 className="text-lg font-medium mb-2">Social Media</h3>
+            <p className="text-foreground/70 text-sm">
+              Follow me on <a href="https://www.instagram.com/thinula_harischandra" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Instagram</a> to see more of my photography work and latest captures.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 

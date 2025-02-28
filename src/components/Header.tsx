@@ -13,7 +13,6 @@ const Header = () => {
     { id: 'about', label: 'About' },
     { id: 'education', label: 'Education' },
     { id: 'projects', label: 'Projects' },
-    { id: 'photography', label: 'Photography' },
     { id: 'social', label: 'Social' },
     { id: 'contact', label: 'Contact' },
   ];
@@ -116,6 +115,13 @@ const Header = () => {
               {section.label}
             </a>
           ))}
+          <a
+            href="/photography"
+            className="text-xl font-medium text-foreground/70"
+            onClick={toggleMobileMenu}
+          >
+            Photography
+          </a>
         </nav>
       </div>
     </header>

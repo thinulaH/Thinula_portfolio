@@ -4,12 +4,12 @@ import { cn } from '@/lib/utils';
 import { Code, Database, Globe, Server, Terminal, BarChart3, GitBranch, Languages } from 'lucide-react';
 
 const skills = [
-  { name: 'Programming (Python, Java, C#)', level: 90, icon: <Terminal className="w-4 h-4" /> },
-  { name: 'Web Development (React)', level: 85, icon: <Globe className="w-4 h-4" /> },
-  { name: 'Backend (Spring Boot)', level: 80, icon: <Server className="w-4 h-4" /> },
-  { name: 'Database (MySQL, PostgreSQL)', level: 85, icon: <Database className="w-4 h-4" /> },
-  { name: 'Data Visualization', level: 80, icon: <BarChart3 className="w-4 h-4" /> },
-  { name: 'Version Control (Git)', level: 75, icon: <GitBranch className="w-4 h-4" /> },
+  { name: 'Programming (Python, Java, C#)', icon: <Terminal className="w-4 h-4" /> },
+  { name: 'Web Development (React)', icon: <Globe className="w-4 h-4" /> },
+  { name: 'Backend (Spring Boot)', icon: <Server className="w-4 h-4" /> },
+  { name: 'Database (MySQL, PostgreSQL)', icon: <Database className="w-4 h-4" /> },
+  { name: 'Data Visualization', icon: <BarChart3 className="w-4 h-4" /> },
+  { name: 'Version Control (Git)', icon: <GitBranch className="w-4 h-4" /> },
 ];
 
 const About = () => {
@@ -110,27 +110,31 @@ const About = () => {
         )}>
           <h3 className="text-2xl font-semibold mb-6">Technical Skills</h3>
           
-          <div className="space-y-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {skills.map((skill, index) => (
-              <div key={skill.name} className="space-y-2">
-                <div className="flex justify-between items-center">
-                  <span className="font-medium flex items-center gap-2">
-                    {skill.icon}
-                    {skill.name}
-                  </span>
-                  <span>{skill.level}%</span>
+              <div 
+                key={skill.name} 
+                className={cn(
+                  "glass-card p-4 rounded-xl flex items-center gap-3 transform transition-all duration-500",
+                  isVisible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0",
+                  `delay-${index * 100}`
+                )}
+              >
+                <div className="p-2 rounded-full bg-secondary/60">
+                  {skill.icon}
                 </div>
-                <div className="h-2 bg-secondary rounded-full overflow-hidden">
-                  <div 
-                    className="h-full bg-primary transition-all duration-1000 ease-out"
-                    style={{ 
-                      width: isVisible ? `${skill.level}%` : '0%',
-                      transitionDelay: `${index * 200}ms`
-                    }}
-                  ></div>
-                </div>
+                <span className="font-medium">{skill.name}</span>
               </div>
             ))}
+          </div>
+          
+          <div className="mt-8">
+            <a 
+              href="/photography" 
+              className="flex items-center justify-center gap-2 w-full px-6 py-3 rounded-md border border-border bg-secondary/50 hover:bg-secondary transition-all"
+            >
+              View Photography
+            </a>
           </div>
         </div>
       </div>

@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { cn } from '@/lib/utils';
 import { useToast } from '@/hooks/use-toast';
-import { Phone, Mail, MapPin, Github, Linkedin } from 'lucide-react';
+import { Phone, Mail, MapPin, Github, Linkedin, Instagram, Twitter } from 'lucide-react';
 
 const Contact = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -176,7 +176,7 @@ const Contact = () => {
             
             <div className="mt-8">
               <h4 className="font-medium mb-4">Connect With Me</h4>
-              <div className="flex gap-4">
+              <div className="flex flex-wrap gap-4">
                 <a 
                   href="https://github.com/thinulaH" 
                   target="_blank" 
@@ -186,12 +186,28 @@ const Contact = () => {
                   <Github className="w-5 h-5" />
                 </a>
                 <a 
-                  href="https://linkedin.com/in/thinula-harischandra-218208272" 
+                  href="https://www.linkedin.com/in/thinula-harischandra-218208272/?originalSubdomain=lk" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="p-3 rounded-full bg-secondary/50 hover:bg-secondary transition-colors"
                 >
                   <Linkedin className="w-5 h-5" />
+                </a>
+                <a 
+                  href="https://www.instagram.com/thinula_harischandra" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="p-3 rounded-full bg-secondary/50 hover:bg-secondary transition-colors"
+                >
+                  <Instagram className="w-5 h-5" />
+                </a>
+                <a 
+                  href="https://x.com/thinula_02" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="p-3 rounded-full bg-secondary/50 hover:bg-secondary transition-colors"
+                >
+                  <Twitter className="w-5 h-5" />
                 </a>
               </div>
             </div>

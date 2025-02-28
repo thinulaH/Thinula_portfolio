@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
-import { Github, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
+import { Github, Linkedin, Mail, Phone, MapPin, Instagram, Twitter } from 'lucide-react';
 
 const Footer = () => {
   const [year, setYear] = useState(new Date().getFullYear());
@@ -39,12 +39,28 @@ const Footer = () => {
                 <Github className="w-5 h-5" />
               </a>
               <a 
-                href="https://linkedin.com/in/thinula-harischandra-218208272" 
+                href="https://www.linkedin.com/in/thinula-harischandra-218208272/?originalSubdomain=lk" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="p-2 rounded-full bg-secondary/50 hover:bg-secondary transition-colors"
               >
                 <Linkedin className="w-5 h-5" />
+              </a>
+              <a 
+                href="https://www.instagram.com/thinula_harischandra" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="p-2 rounded-full bg-secondary/50 hover:bg-secondary transition-colors"
+              >
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a 
+                href="https://x.com/thinula_02" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="p-2 rounded-full bg-secondary/50 hover:bg-secondary transition-colors"
+              >
+                <Twitter className="w-5 h-5" />
               </a>
               <a 
                 href="mailto:thinula.haris@gmail.com" 
@@ -62,7 +78,7 @@ const Footer = () => {
               <li><a href="#about" className="text-foreground/70 hover:text-foreground transition-colors">About</a></li>
               <li><a href="#education" className="text-foreground/70 hover:text-foreground transition-colors">Education</a></li>
               <li><a href="#projects" className="text-foreground/70 hover:text-foreground transition-colors">Projects</a></li>
-              <li><a href="#photography" className="text-foreground/70 hover:text-foreground transition-colors">Photography</a></li>
+              <li><a href="/photography" className="text-foreground/70 hover:text-foreground transition-colors">Photography</a></li>
               <li><a href="#contact" className="text-foreground/70 hover:text-foreground transition-colors">Contact</a></li>
             </ul>
           </div>

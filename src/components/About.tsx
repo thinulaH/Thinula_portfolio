@@ -2,6 +2,7 @@
 import { useRef, useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
 import { Code, Database, Globe, Server, Terminal, BarChart3, GitBranch, Languages } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const skills = [
   { name: 'Programming (Python, Java, C#)', icon: <Terminal className="w-4 h-4" /> },
@@ -129,12 +130,12 @@ const About = () => {
           </div>
           
           <div className="mt-8">
-            <a 
-              href="/photography" 
+            <Link 
+              to="/photography" 
               className="flex items-center justify-center gap-2 w-full px-6 py-3 rounded-md border border-border bg-secondary/50 hover:bg-secondary transition-all"
             >
               View Photography
-            </a>
+            </Link>
           </div>
         </div>
       </div>

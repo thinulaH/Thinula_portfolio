@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
 import { Github, Linkedin, Mail, Phone, MapPin, Instagram, Twitter } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const [year, setYear] = useState(new Date().getFullYear());
@@ -78,7 +79,7 @@ const Footer = () => {
               <li><a href="#about" className="text-foreground/70 hover:text-foreground transition-colors">About</a></li>
               <li><a href="#education" className="text-foreground/70 hover:text-foreground transition-colors">Education</a></li>
               <li><a href="#projects" className="text-foreground/70 hover:text-foreground transition-colors">Projects</a></li>
-              <li><a href="/photography" className="text-foreground/70 hover:text-foreground transition-colors">Photography</a></li>
+              <li><Link to="/photography" className="text-foreground/70 hover:text-foreground transition-colors">Photography</Link></li>
               <li><a href="#contact" className="text-foreground/70 hover:text-foreground transition-colors">Contact</a></li>
             </ul>
           </div>

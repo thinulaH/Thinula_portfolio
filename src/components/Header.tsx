@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import ThemeToggle from '@/components/ThemeToggle';
 import { cn } from '@/lib/utils';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -66,6 +67,12 @@ const Header = () => {
               {section.label}
             </a>
           ))}
+          <Link
+            to="/photography"
+            className="nav-link"
+          >
+            Photography
+          </Link>
         </nav>
         
         <div className="flex items-center gap-4">
@@ -115,13 +122,13 @@ const Header = () => {
               {section.label}
             </a>
           ))}
-          <a
-            href="/photography"
+          <Link
+            to="/photography"
             className="text-xl font-medium text-foreground/70"
             onClick={toggleMobileMenu}
           >
             Photography
-          </a>
+          </Link>
         </nav>
       </div>
     </header>

@@ -6,49 +6,49 @@ import { Camera, ImagePlus, ExternalLink } from 'lucide-react';
 const photos = [
   {
     id: 1,
-    src: "public/1.jpg",
+    src: "/1.jpg",
     alt: "",
     description: ""
   },
   {
     id: 2,
-    src: "public/2.jpg",
+    src: "/2.jpg",
     alt: "",
     description: ""
   },
   {
     id: 3,
-    src: "public/3.jpg",
+    src: "/3.jpg",
     alt: "",
     description: ""
   },
   {
     id: 4,
-    src: "public/DSCN3703.jpg",
+    src: "/DSCN3703.jpg",
     alt: "",
     description: ""
   },
   {
     id: 5,
-    src: "public/DSCN4605.jpg",
+    src: "/DSCN4605.jpg",
     alt: "",
     description: ""
   },
   {
     id: 6,
-    src: "public/DSCN4673.jpg",
+    src: "/DSCN4673.jpg",
     alt: "",
     description: ""
   },
   {
     id: 7,
-    src: "public/DSCN4674.jpg",
+    src: "/DSCN4674.jpg",
     alt: "",
     description: ""
   },
   {
     id: 7,
-    src: "public/DSCN4945.jpg",
+    src: "/DSCN4945.jpg",
     alt: "",
     description: ""
   }

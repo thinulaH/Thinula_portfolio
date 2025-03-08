@@ -41,7 +41,7 @@ const Index = () => {
           <About />
           <Education />
           <Projects />
-          <SocialFeed />
+          {/* <SocialFeed /> */}
           <Contact />
         </main>
         <Footer />

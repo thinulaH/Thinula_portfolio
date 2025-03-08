@@ -136,7 +136,7 @@ const Education = () => {
             Certifications & Training
           </h3>
 
-          <div className="space-y-4">
+          {/* <div className="space-y-4">
             {certifications.map((cert, index) => (
               <div 
                 key={index}
@@ -156,7 +156,7 @@ const Education = () => {
                 </div>
               </div>
             ))}
-          </div>
+          </div> */}
 
           <div className={cn(
             "mt-10 glass-card p-6 rounded-xl transition-all duration-700 delay-700",

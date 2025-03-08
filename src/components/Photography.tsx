@@ -6,39 +6,51 @@ import { Camera, ImagePlus, ExternalLink } from 'lucide-react';
 const photos = [
   {
     id: 1,
-    src: "https://images.unsplash.com/photo-1472396961693-142e6e269027",
-    alt: "Two brown deer beside trees and a mountain",
-    description: "Wildlife in Natural Habitat"
+    src: "public/1.jpg",
+    alt: "",
+    description: ""
   },
   {
     id: 2,
-    src: "https://images.unsplash.com/photo-1466721591366-2d5fba72006d",
-    alt: "Brown antelope and zebra on a field during daytime",
-    description: "Savanna Wildlife"
+    src: "public/2.jpg",
+    alt: "",
+    description: ""
   },
   {
     id: 3,
-    src: "https://images.unsplash.com/photo-1535268647677-300dbf3d78d1",
-    alt: "Grey tabby kitten",
-    description: "Pet Portrait"
+    src: "public/3.jpg",
+    alt: "",
+    description: ""
   },
   {
     id: 4,
-    src: "https://images.unsplash.com/photo-1498936178812-4b2e558d2937",
-    alt: "Shallow focus photography of bees in mid-air",
-    description: "Macro Insect Photography"
+    src: "public/DSCN3703.jpg",
+    alt: "",
+    description: ""
   },
   {
     id: 5,
-    src: "https://images.unsplash.com/photo-1721322800607-8c38375eef04",
-    alt: "A living room with a couch and a table",
-    description: "Interior Design"
+    src: "public/DSCN4605.jpg",
+    alt: "",
+    description: ""
   },
   {
     id: 6,
-    src: "https://images.unsplash.com/photo-1538991383142-36c4edeaffde",
-    alt: "Landscape view of mountains and water",
-    description: "Scenic Landscape"
+    src: "public/DSCN4673.jpg",
+    alt: "",
+    description: ""
+  },
+  {
+    id: 7,
+    src: "public/DSCN4674.jpg",
+    alt: "",
+    description: ""
+  },
+  {
+    id: 7,
+    src: "public/DSCN4945.jpg",
+    alt: "",
+    description: ""
   }
 ];
 

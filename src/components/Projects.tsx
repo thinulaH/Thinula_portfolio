@@ -18,7 +18,7 @@ const projects = [
   {
     title: "Real-Time Ticket Management System",
     description: "An individual project developing a system for efficiently managing and processing tickets in real-time environments.",
-    image: "public/TicketingSystem.png",
+    image: "/TicketingSystem.png",
     tags: ["Java", "Spring Boot", "Database", "Real-time Processing"],
     github: "#",
     demo: "#",

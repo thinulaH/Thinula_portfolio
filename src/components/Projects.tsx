@@ -10,7 +10,7 @@ const projects = [
     image: "https://images.unsplash.com/photo-1553481187-be93c21490a9",
     tags: ["Game Development", "Education", "Interactive Learning"],
     github: "#",
-    demo: "#",
+    demo: "https://www.readaroo.online",
     category: "full-stack",
     featured: true,
     timeline: "Oct 2024-Present"
@@ -18,7 +18,7 @@ const projects = [
   {
     title: "Real-Time Ticket Management System",
     description: "An individual project developing a system for efficiently managing and processing tickets in real-time environments.",
-    image: "https://images.unsplash.com/photo-1551434678-e076c223a692",
+    image: "public/TicketingSystem.png",
     tags: ["Java", "Spring Boot", "Database", "Real-time Processing"],
     github: "#",
     demo: "#",
@@ -52,7 +52,7 @@ const projects = [
     image: "https://images.unsplash.com/photo-1586974710160-c9a5a42eecfe",
     tags: ["Web Development", "React", "Environmental"],
     github: "#",
-    demo: "#",
+    demo: "https://edmthinula.github.io/life-on-land",
     category: "frontend",
     timeline: "Feb 2024-Apr 2024"
   }

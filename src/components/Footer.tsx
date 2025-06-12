@@ -30,7 +30,7 @@ const Footer = () => {
               at the intersection of technology and data analysis.
             </p>
             
-            <div className="mt-6 flex gap-4">
+            <div className="mt-6 flex gap-4 justify-between">
               <a 
                 href="https://github.com/thinulaH" 
                 target="_blank" 

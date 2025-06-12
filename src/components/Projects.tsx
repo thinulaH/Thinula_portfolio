@@ -63,7 +63,8 @@ const techIcons = {
   "frontend": <Code className="h-5 w-5" />,
   "backend": <Server className="h-5 w-5" />,
   "data-science": <BrainCircuit className="h-5 w-5" />,
-  "web": <Globe className="h-5 w-5" />
+  "web": <Globe className="h-5 w-5" />,
+  "Data Analysis": <Database className="h-5 w-5" />
 };
 
 const Projects = () => {
@@ -102,7 +103,8 @@ const Projects = () => {
     { id: "full-stack", label: "Full Stack" },
     { id: "frontend", label: "Frontend" },
     { id: "backend", label: "Backend" },
-    { id: "data-science", label: "Data Science" }
+    { id: "data-science", label: "Data Science" },
+    { id: "data-analysis", label: "Data Analysis" }
   ];
 
   return (

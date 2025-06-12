@@ -1,5 +1,6 @@
 
 import { useState, useEffect, useRef } from 'react';
+import emailjs from '@emailjs/browser';
 import { cn } from '@/lib/utils';
 import { useToast } from '@/hooks/use-toast';
 import { Phone, Mail, MapPin, Github, Linkedin, Instagram, Twitter } from 'lucide-react';
@@ -44,16 +45,41 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
+
+    const serviceID = 'service_6akrqnw';
+    const templateIDToMe = 'template_ob9hsdq';
+    const templateIDToUser = 'template_to_user';
+    const publicKey = '5IjwciOzbrkWkZRBt';
+
+    emailjs.send(serviceID, templateIDToMe, {
+      from_name: formState.name,
+      from_email: formState.email,
+      message: formState.message,
+    }, publicKey)
+    .then(() => {
+      // Auto-reply to sender
+      return emailjs.send(serviceID, templateIDToUser, {
+        to_name: formState.name,
+        to_email: formState.email,
+      }, publicKey);
+    })
+    .then(() => {
       toast({
         title: "Message sent!",
         description: "Thank you for reaching out. I'll get back to you soon.",
       });
       setFormState({ name: '', email: '', message: '' });
       setIsSubmitting(false);
-    }, 1500);
+    })
+    .catch((error) => {
+      console.error('EmailJS Error:', error);
+      toast({
+        title: "Error",
+        description: "Something went wrong. Please try again later.",
+        variant: "destructive",
+      });
+      setIsSubmitting(false);
+    });
   };
 
   return (
@@ -143,7 +169,7 @@ const Contact = () => {
             <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
             
             <div className="space-y-6">
-              <div className="flex items-start gap-4">
+              <div className="flex items-start gap-4 justify-between ">
                 <div className="p-3 rounded-full bg-secondary/50">
                   <Phone className="w-5 h-5" />
                 </div>
@@ -151,9 +177,10 @@ const Contact = () => {
                   <h4 className="font-medium">Phone</h4>
                   <p className="text-foreground/70">+94 70 669 2736</p>
                 </div>
+                <div></div>
               </div>
               
-              <div className="flex items-start gap-4">
+              <div className="flex items-start gap-4 justify-between">
                 <div className="p-3 rounded-full bg-secondary/50">
                   <Mail className="w-5 h-5" />
                 </div>
@@ -161,9 +188,10 @@ const Contact = () => {
                   <h4 className="font-medium">Email</h4>
                   <p className="text-foreground/70">thinula.haris@gmail.com</p>
                 </div>
+                <div></div>
               </div>
               
-              <div className="flex items-start gap-4">
+              <div className="flex items-start gap-4 justify-between">
                 <div className="p-3 rounded-full bg-secondary/50">
                   <MapPin className="w-5 h-5" />
                 </div>
@@ -171,17 +199,19 @@ const Contact = () => {
                   <h4 className="font-medium">Location</h4>
                   <p className="text-foreground/70">Gampaha, Sri Lanka</p>
                 </div>
+                <div></div>
               </div>
+              
             </div>
             
-            <div className="mt-8">
+            <div className="mt-8 flex flex-col items-center">
               <h4 className="font-medium mb-4">Connect With Me</h4>
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap justify-between gap-4">
                 <a 
                   href="https://github.com/thinulaH" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="p-3 rounded-full bg-secondary/50 hover:bg-secondary transition-colors"
+                  className="p-3 rounded-full bg-secondary/50 hover:bg-secondary transition-colors flex items-center justify-center w-12 h-12"
                 >
                   <Github className="w-5 h-5" />
                 </a>
@@ -189,7 +219,7 @@ const Contact = () => {
                   href="https://www.linkedin.com/in/thinula-harischandra-218208272/?originalSubdomain=lk" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="p-3 rounded-full bg-secondary/50 hover:bg-secondary transition-colors"
+                  className="p-3 rounded-full bg-secondary/50 hover:bg-secondary transition-colors flex items-center justify-center w-12 h-12"
                 >
                   <Linkedin className="w-5 h-5" />
                 </a>
@@ -197,7 +227,7 @@ const Contact = () => {
                   href="https://www.instagram.com/thinula_harischandra" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="p-3 rounded-full bg-secondary/50 hover:bg-secondary transition-colors"
+                  className="p-3 rounded-full bg-secondary/50 hover:bg-secondary transition-colors flex items-center justify-center w-12 h-12"
                 >
                   <Instagram className="w-5 h-5" />
                 </a>
@@ -205,7 +235,7 @@ const Contact = () => {
                   href="https://x.com/thinula_02" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="p-3 rounded-full bg-secondary/50 hover:bg-secondary transition-colors"
+                  className="p-3 rounded-full bg-secondary/50 hover:bg-secondary transition-colors flex items-center justify-center w-12 h-12"
                 >
                   <Twitter className="w-5 h-5" />
                 </a>

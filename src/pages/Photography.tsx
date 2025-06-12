@@ -54,7 +54,7 @@ const PhotographyPage = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
                 <div className="w-full p-8 text-white animate-slide-in">
                   <h2 className="text-3xl md:text-4xl font-bold mb-3">My Visual Journey</h2>
-                  <p className="max-w-2xl">
+                  <p >
                     Capturing moments and perspectives through my lens. A collection of photographs that tell stories and evoke emotions.
                   </p>
                 </div>

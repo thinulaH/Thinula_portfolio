@@ -5,10 +5,10 @@ import { Github, ExternalLink, Code, Server, Database, Layers, BrainCircuit, Glo
 
 const projects = [
   {
-    title: "Snicker-Snap - Educational Game",
+    title: "Readaroo - Educational Game",
     description: "A university group project focused on creating an educational game to enhance learning experiences through interactive gameplay.",
-    image: "https://images.unsplash.com/photo-1553481187-be93c21490a9",
-    tags: ["Game Development", "Education", "Interactive Learning"],
+    image: "public/readaroo.png",
+    tags: ["Game Development", "Education", "Interactive Learning", "Unity", "C#","RAG", "AI"],
     github: "#",
     demo: "https://www.readaroo.online",
     category: "full-stack",
@@ -49,7 +49,7 @@ const projects = [
   {
     title: "Life-on-Land",
     description: "A web development group project focused on environmental awareness and conservation of land ecosystems.",
-    image: "https://images.unsplash.com/photo-1586974710160-c9a5a42eecfe",
+    image: "public/lifeonland.png",
     tags: ["Web Development", "React", "Environmental"],
     github: "#",
     demo: "https://edmthinula.github.io/life-on-land",

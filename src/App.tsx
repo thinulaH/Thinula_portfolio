@@ -2,12 +2,14 @@
 import { Outlet } from 'react-router-dom'
 import './App.css'
 import { Toaster } from '@/components/ui/toaster'
+import ScrollToTop from './components/ui/ScrollToTop'
 
 function App() {
   return (
     <>
-      <Outlet />
-      <Toaster />
+    <ScrollToTop/>
+    <Outlet />
+    <Toaster />
     </>
   )
 }

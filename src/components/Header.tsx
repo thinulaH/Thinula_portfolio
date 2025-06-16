@@ -52,7 +52,7 @@ const Header = () => {
       scrolled ? "py-3 bg-background/80 backdrop-blur-lg shadow-sm" : "py-5"
     )}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
-        <a href="#home" className="text-xl font-bold text-gradient">CS PORTFOLIO</a>
+        <a href="#home" className="text-xl font-bold text-gradient">TNH</a>
         
         <nav className="hidden md:flex items-center gap-6">
           {sections.map((section) => (
@@ -68,7 +68,7 @@ const Header = () => {
             </a>
           ))}
           <Link
-            to="/photography"
+            to="/photography" 
             className="nav-link"
           >
             Photography

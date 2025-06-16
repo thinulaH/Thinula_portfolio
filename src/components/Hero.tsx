@@ -1,4 +1,3 @@
-
 import { useRef, useEffect } from 'react';
 
 const Hero = () => {
@@ -34,11 +33,11 @@ const Hero = () => {
     <section 
       id="home" 
       ref={heroRef}
-      className="min-h-screen relative flex items-center justify-center overflow-hidden"
+      className="min-h-screen relative flex items-center justify-center overflow-hidden w-full"
       style={{
         background: `radial-gradient(
           circle at calc(50% + var(--mouse-x, 0.5) * 30vw) calc(50% + var(--mouse-y, 0.5) * 30vh), 
-          rgba(var(--primary) / 0.1), 
+          rgba(30, 58, 138, 0.2), 
           transparent 40vw
         )`
       }}

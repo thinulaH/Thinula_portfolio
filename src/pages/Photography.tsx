@@ -37,7 +37,7 @@ const PhotographyPage = () => {
               >
                 <ArrowLeft className="w-5 h-5" />
               </button>
-              <h1 className="text-xl font-bold text-gradient">Photography Portfolio</h1>
+              <h1 className="text-xl font-bold text-gradient">Photography</h1>
             </div>
             <ThemeToggle />
           </div>

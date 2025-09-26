@@ -7,7 +7,7 @@ const projects = [
   {
     title: "Readaroo - Educational Game",
     description: "A university group project focused on creating an educational game to enhance learning experiences through interactive gameplay.",
-    image: "public/readaroo.png",
+    image: "/readaroo.png",
     tags: ["Game Development", "Education", "Interactive Learning", "Unity", "C#","RAG", "AI"],
     github: "#",
     demo: "https://www.readaroo.online",
@@ -49,7 +49,7 @@ const projects = [
   {
     title: "Life-on-Land",
     description: "A web development group project focused on environmental awareness and conservation of land ecosystems.",
-    image: "public/lifeonland.png",
+    image: "/lifeonland.png",
     tags: ["Web Development", "React", "Environmental"],
     github: "#",
     demo: "https://edmthinula.github.io/life-on-land",

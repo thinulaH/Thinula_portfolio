@@ -22,22 +22,10 @@ const educationItems = [
 
 const certifications = [
   {
-    name: "Web Development",
-    issuer: "Online Learning Platform",
-    date: "2023",
-    credential: "WD-2023-TH"
-  },
-  {
-    name: "Python for Data Science",
-    issuer: "DataTech Academy",
-    date: "2024",
-    credential: "PDS-2024-TH"
-  },
-  {
-    name: "Machine Learning Fundamentals",
-    issuer: "Kaggle",
-    date: "2024",
-    credential: "ML-2024-TH"
+    name: "AI 900: Microsoft Azure AI Fundamentals",
+    issuer: "Microsoft",
+    date: "2025",
+    credential: ""
   }
 ];
 
@@ -136,7 +124,7 @@ const Education = () => {
             Certifications & Training
           </h3>
 
-          {/* <div className="space-y-4">
+          <div className="space-y-4">
             {certifications.map((cert, index) => (
               <div 
                 key={index}
@@ -151,12 +139,12 @@ const Education = () => {
                   <span className="text-sm bg-secondary px-3 py-1 rounded-full text-foreground/70">{cert.date}</span>
                 </div>
                 <p className="text-foreground/70">{cert.issuer}</p>
-                <div className="mt-2 pt-2 border-t border-border">
+                {/* <div className="mt-2 pt-2 border-t border-border">
                   <span className="text-xs text-foreground/60">Credential ID: {cert.credential}</span>
-                </div>
+                </div> */}
               </div>
             ))}
-          </div> */}
+          </div>
 
           <div className={cn(
             "mt-10 glass-card p-6 rounded-xl transition-all duration-700 delay-700",

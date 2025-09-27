@@ -5,6 +5,39 @@ import { Github, ExternalLink, Code, Server, Database, Layers, BrainCircuit, Glo
 
 const projects = [
   {
+    "title": "StockAnalyzer.lk",
+    "description": "A web application for analyzing Sri Lankan stock market data, providing real-time insights and visualization of stock trends.",
+    "image": "/stockanalyzer.png", // Replace with your project's image path
+    "tags": ["Web Development", "Data Analysis", "Financial Data", "React", "API Integration"],
+    "github": "#", // Replace with your project's GitHub link
+    "demo": "https://www.stockanalyzer.lk",
+    "category": "full-stack", // Assuming it involves both frontend and backend for data
+    "featured": true,
+    "timeline": "Ongoing" // Adjust the timeline as needed
+  },
+   {
+    "title": "UNIQUATE - University Hall Booking System",
+    "description": "A comprehensive, role-based web application developed for the University Group Project.",
+    "image": "/uniquate.png", // Replace with your project's image path
+    "tags": ["Web Development", "Full-Stack", "PHP", "MySQL", "JavaScript", "Role-Based Access"],
+    "github": "https://github.com/thinulah/Uniquate", // Replace with the correct GitHub link
+    "demo": "#", // Replace with the live demo link if available
+    "category": "full-stack",
+    "featured": false,
+    "timeline": "Oct 2024 - Jan 2025" // Adjust the timeline as needed
+  },
+  {
+    "title": "Predicting Cancer Patients Mortality Status",
+    "description": "A machine learning project focused on predicting patient mortality and survival months using clinical data. Involved extensive data cleaning, modeling, hyperparameter tuning, and ensemble methods.",
+    "image": "/ds_uni_project.png",
+    "tags": ["Machine Learning", "Classification", "Regression", "Python", "scikit-learn", "Ensemble Learning"],
+    "github": "#", // Replace with your project's GitHub link
+    "demo": "#", // Replace with a demo link if available
+    "category": "data-science",
+    "featured": true,
+    "timeline": "Jan 2025-May 2025"
+  },
+  {
     title: "Readaroo - Educational Game",
     description: "A university group project focused on creating an educational game to enhance learning experiences through interactive gameplay.",
     image: "/readaroo.png",
@@ -23,7 +56,7 @@ const projects = [
     github: "#",
     demo: "#",
     category: "backend",
-    featured: true,
+    featured: false,
     timeline: "Sep 2024-Jan 2025"
   },
   {
@@ -33,7 +66,7 @@ const projects = [
     tags: ["Machine Learning", "Python", "Regression", "Data Analysis"],
     github: "#",
     category: "data-science",
-    featured: true,
+    featured: false,
     timeline: "Jan 2025"
   },
   {
@@ -43,7 +76,7 @@ const projects = [
     tags: ["Data Analysis", "Statistical Modeling", "Visualization"],
     github: "#",
     demo: "#",
-    category: "data-science",
+    category: "statistics",
     timeline: "Oct 2024"
   },
   {
